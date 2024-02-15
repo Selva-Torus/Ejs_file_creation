@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 export const makeApiRequest = async() => {
-    var apiUrl = `<%= data.username  %>` === 'admin' ? `<%= data.adminResponseURL %>` : `<%= data.userResponseURL %>`;
+    var apiUrl = `<%= data.username.trim()  %>` === 'admin' ? `<%= data.adminResponseURL %>` : `<%= data.userResponseURL %>`;
    try{
        const response = await axios.get(apiUrl);
        return response.data;

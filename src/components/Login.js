@@ -2,6 +2,7 @@
 import { getFunction } from '@/utils/utilsFunctions'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { toast } from 'react-toastify'
 
 const Login = () => {
     const [state , setState ] = React.useState({})
@@ -12,9 +13,13 @@ const Login = () => {
     }
 
     const handleClick = async(e) => {
-      const res = await getFunction(state);
-      console.log(res);
-      router.push('/welcomepage')
+      if(!Object.keys(state).length || !state.username || !state.password ||state.username === '' || state.password === ''){
+        toast.error('Please enter username and password')
+      }else{
+        const res = await getFunction(state);
+        console.log(res);
+        router.push('/welcomepage')
+      } 
     }
 
     return (
