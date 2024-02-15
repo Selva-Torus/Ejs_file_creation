@@ -26,11 +26,11 @@ const Login = () => {
     <div className='flex flex-col bg-gray-300 justify-center items-center gap-2 w-full h-screen'>
       <div className='flex flex-col'>
         <label>Username</label>
-        <input type='text' name='username' onChange={handleChange}/>
+        <input type='text' className='p-2 rounded focus:outline-sky-300' name='username' onChange={handleChange}/>
       </div>
       <div className='flex flex-col'>
         <label>Password</label>
-        <input type='password' name='password' onChange={handleChange}/>
+        <input type='password' className='p-2 rounded focus:outline-sky-300' name='password' onChange={handleChange}/>
       </div>
       <button className='bg-blue-500 text-white p-2 rounded' onClick={handleClick}>Login</button>
     </div>
